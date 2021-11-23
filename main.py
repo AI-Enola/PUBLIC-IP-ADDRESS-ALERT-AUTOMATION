@@ -7,6 +7,7 @@ Version : Public V1
 
 from get_public_ip import get_public_ip
 from email_io import MailIO
+from regex import check_ip
 import time
 from log import *
 
@@ -27,6 +28,10 @@ class Check_IP():
         
         self.actual_ip = get_public_ip() # Start with actual Public IP
         
+        if not check_ip(ip=self.actual_ip) :
+            self.logger.info("Error - Query didn't return IP. Quitting program...")
+            exit()
+        
 
     def main(self) -> None :
         """
@@ -41,7 +46,7 @@ class Check_IP():
         while 1 : # Keep program running. Note : Can also use bash to keep program running from shell script
             ip = get_public_ip() # Get Public IP
             
-            if (self.actual_ip != ip): # Send Mail only if Public IP is different from actual Public IP
+            if (check_ip(ip=ip) and self.actual_ip != ip): # Send Mail only if Public IP is different from actual Public IP
                 
                 self.logger.info("Public IP has been changed ! New Public IP is : {0}".format(ip))
                 self.actual_ip = ip # Put new IP as actual IP because IP has been changed
