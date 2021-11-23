@@ -11,8 +11,6 @@ Before using this script :
 
 
 To use this script :
-
-  Activate Python virtual environment : source py_prog/bin/activate
-  Start script : ./py_prog/bin/python3 main.py
+  Start script : python3 main.py
   
   Enjoy !
