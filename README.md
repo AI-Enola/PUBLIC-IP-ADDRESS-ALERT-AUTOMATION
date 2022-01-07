@@ -1,6 +1,7 @@
 # PUBLIC-IP-ADDRESS-ALERT-AUTOMATION
 
 Compatibility : Mac OS & GNU/Linux
+
 For external query via Internet : CURL need to ne installed on your machine.
 
 Python 3.9.5 - Send new IP public address via Mail to inform owner of new IP - Useful when using home VPN Server on ISP dynamic IP address
@@ -14,9 +15,10 @@ Before using this script :
 
 
 To use this script :
-  Start script : python3 main.py
+
+  python3 main.py
   
-  Enjoy !
+Enjoy !
 
 Main project : https://github.com/AI-Enola/AUTOMATION_SERVICES_CORE
 Note : This sub project is a service present in Main project
